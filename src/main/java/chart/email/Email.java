@@ -54,7 +54,7 @@ public class Email {
 
 	}
 
-	public static void triggerEMail() throws Exception {
+	public static void triggerEMail(String filename, String scripName) throws Exception {
 		MailSSLSocketFactory sf = new MailSSLSocketFactory();
 		sf.setTrustAllHosts(true);
 
@@ -77,7 +77,7 @@ public class Email {
 			Message message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("ravikukrejapune@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("ravikukrejapune@gmail.com"));
-			message.setSubject("Weekly Charts");
+			message.setSubject(scripName + "Weekly Charts");
 			BodyPart messageBodyPart1 = new MimeBodyPart();
 			String htmlText = "<H1>Hello</H1><img src=\"cid:image\">";
 			messageBodyPart1.setContent(htmlText, "text/html");
@@ -86,8 +86,9 @@ public class Email {
 			// MimeBodyPart messageBodyPart2 = new MimeBodyPart();
 			multipart.addBodyPart(messageBodyPart1);
 
+
+			
 			messageBodyPart1 = new MimeBodyPart();
-			String filename = "resources/DMART-30.04.2020.PNG";
 			DataSource source = new FileDataSource(filename);
 			messageBodyPart1.setDataHandler(new DataHandler(source));
 			messageBodyPart1.setHeader("Content-ID", "<image>");

@@ -50,5 +50,6 @@ public class CreateChart {
 		Thread.sleep(5000);
 		TakeSS.takeSnapShot(driver, ssName);
 		driver.quit();
+		Email.triggerEMail(ssName, scripName);
 	}
 }
