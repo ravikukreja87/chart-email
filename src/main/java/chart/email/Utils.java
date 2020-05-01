@@ -15,7 +15,7 @@ public class Utils {
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
-		List<String> allCodes = new ArrayList<>();
+		List<String> allCodes = new ArrayList<String>();
 		try {
 
 			br = new BufferedReader(new FileReader(csvFile));

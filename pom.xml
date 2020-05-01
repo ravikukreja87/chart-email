@@ -28,6 +28,8 @@
 			</plugin>
 		</plugins>
 	</build>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>com.sun.mail</groupId>

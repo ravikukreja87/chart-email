@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 public class TakeSS {
 
 	public static void takeSnapShot(WebDriver webdriver, String fileWithPath) throws Exception {
+		System.out.println("File with path :: " + fileWithPath);
 		// Convert web driver object to TakeScreenshot
 		TakesScreenshot scrShot = ((TakesScreenshot) webdriver);
 		// Call getScreenshotAs method to create image file
@@ -17,7 +18,5 @@ public class TakeSS {
 		File DestFile = new File(fileWithPath);
 		// Copy file at destination
 		FileUtils.copyFile(SrcFile, DestFile);
-
 	}
-
 }
